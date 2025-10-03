@@ -231,3 +231,53 @@ input[type="number"] {
     padding: 20px
   }
 }
+
+/* Esconder campos da calculadora exceto cidade no início */
+#bairro,
+#outro,
+#faculdade,
+#transporte,
+#alimentacao,
+#materiais {
+  display: none;
+}
+
+/* Estilo do popup de confirmação */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+  width: 300px;
+}
+
+.popup button {
+  margin: 12px 8px 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2b3a42;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.popup button:hover {
+  background: #1e2a30;
+}
