@@ -4,122 +4,122 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blog Universitário — Mockup</title>
+  <title>Simulador de Gastos Universitários</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <div class="frame" role="main">
     <header>
-      <div class="brand">Blog Universitário</div>
+      <div class="brand">Simulador de Gastos Universitários</div>
       <div class="hamburger" aria-hidden="true">☰</div>
     </header>
 
     <section class="hero" aria-label="Destaque">
-      <h1>Informação universitária e regional em um só lugar</h1>
+      <h1>Estime e planeje seus gastos universitários em Itabuna e Ilhéus</h1>
     </section>
 
-    <section aria-labelledby="fac-title">
-      <h2 id="fac-title">Faculdades</h2>
-      <div class="faculties">
-        <article class="card">
-          <img src="/assets/unex.png" alt="UNEX">
-          <div class="body">
-            <div class="title">UNEX</div>
-            <a href="https://unex.edu.br/" target="_blank" class="btn">Saiba mais</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="/assets/ufsb.png" alt="UFSB">
-          <div class="body">
-            <div class="title">UFSB</div>
-            <a href="#ufsb" target="_blank" class="btn">Saiba mais</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="/assets/uesc.png" alt="UESC">
-          <div class="body">
-            <div class="title">UESC</div>
-            <a href="https://www.uesc.br/" target="_blank" class="btn">Saiba mais</a>
-          </div>
-        </article>
-      </div>
-    </section>
+    <section aria-labelledby="perfil-title">
+      <h2 id="perfil-title">Perfil Informativo: Cidades e Faculdades</h2>
+      <p class="lead">Informações de contexto para te ajudar a planejar e comparar as opções de estudo e moradia</p>
 
-    <section class="grid-2" aria-label="Informativos">
-      <div>
-        <h2>Região</h2>
-        <p class="lead">Informações sobre a região: cultura, pontos turísticos e estilo de vida local.</p>
+      <div class="grid-2">
+        <div>
+          <h3>Cidades e Bairros</h3>
+          <p>Seus custos de **moradia** e **transporte** variam muito dependendo da cidade e do bairro.</p>
+          <ul>
+            <li>**Itabuna:** Bairros principais para estudantes incluem Centro, Santo Antônio, São Caetano, Nova Itabuna
+              e Ferradas.</li>
+            <li>**Ilhéus:** Bairros principais incluem Centro, Pontal, Barra, Teotônio Vilela e Nelson Costa.
+            </li>
+            <li>**Salobrinho (Ilhéus):** Tratado como cidade universitária. Oferece **transporte gratuito** e **R.U.
+              opcional** (R$44 se almoçar todos os dias).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Faculdades e Custos </h3>
+          <p>O custo com **alimentação** e **transporte** pode ser definido pela sua faculdade.</p>
+          <ul>
+            <li>**UESC:** Possui **Restaurante Universitário (R.U.)** com baixo custo (R$44/mês).
+              Transporte pago dependendo do bairro.</li>
+            <li>**UFSB:** A alimentação depende da cidade de residência (padrão R$300/mês) e o transporte é pago.</li>
+            <li>**UNEX (Particular):** Localizada apenas em Itabuna[cite: 8]. Não possui R.U.; a alimentação tende a ser
+              mais cara (R$350/mês).</li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h2>Mercado</h2>
-        <p class="lead">Panorama do mercado de trabalho, estágios e oportunidades para estudantes.</p>
-      </div>
-
-      <div>
-        <h2>Entretenimento</h2>
-        <p class="lead">Dicas de lazer: bares, cinemas, eventos e locais de encontro estudantil.</p>
-      </div>
-      <div>
-        <h2>Sobre as Faculdades</h2>
-        <p class="lead">Resumo das instituições: cursos, acesso e contatos úteis.</p>
-      </div>
+      <a href="#calculator" class="btn btn-primary" style="margin-top:20px;display:inline-block;">Calcular meus gastos
+        agora </a>
     </section>
 
     <section aria-labelledby="calc-title">
-      <h2 id="calc-title">Calculadora de gastos</h2>
+      <h2 id="calc-title">Calculadora de Gastos [cite: 4]</h2>
       <div class="calculator" id="calculator">
         <div class="row">
-          <div class="field">
-            <label for="cidade">Cidade</label>
-            <select id="cidade" aria-label="Cidade">
-              <option value="">Selecione a cidade</option>
-              <option>Itabuna</option>
-              <option>Ilhéus</option>
-              <option>Brumado</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="bairro">Bairro</label>
-            <select id="bairro" aria-label="Bairro">
-              <option value="">Selecione o bairro</option>
-              <option>Centro</option>
-              <option>Residencial</option>
-              <option>Universitário</option>
-            </select>
-          </div>
+
           <div class="field">
             <label for="faculdade">Faculdade</label>
             <select id="faculdade" aria-label="Faculdade">
               <option value="">Selecione a faculdade</option>
-              <option>UNEX</option>
-              <option>UFSB</option>
-              <option>UESC</option>
+              <option value="UNEX">UNEX</option>
+              <option value="UFSB">UFSB</option>
+              <option value="UESC">UESC</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cidade">Cidade (RF01)</label>
+            <select id="cidade" aria-label="Cidade" disabled>
+              <option value="">Selecione a cidade</option>
+              <option value="Itabuna">Itabuna</option>
+              <option value="Ilhéus">Ilhéus</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bairro">Bairro/Moradia</label>
+            <select id="bairro" aria-label="Bairro" disabled>
+              <option value="">Selecione a Cidade primeiro</option>
             </select>
           </div>
         </div>
 
         <div class="row">
           <div class="field">
-            <label for="transporte">Transporte (R$ / mês)</label>
-            <input type="number" id="transporte" placeholder="Ex: 150" min="0" />
+            <label for="aluguel">Aluguel/Moradia (R$ / mês) </label>
+            <input type="number" id="aluguel" placeholder="Ex: 500 (obrigatório)" min="0" />
+          </div>
+          <div class="field">
+            <label for="transporte">Transporte (R$ / mês) </label>
+            <input type="text" id="transporte" value="R$ 0,00" readonly title="Valor calculado automaticamente." />
           </div>
           <div class="field">
             <label for="alimentacao">Alimentação (R$ / mês)</label>
-            <input type="number" id="alimentacao" placeholder="Ex: 600" min="0" />
+            <input type="text" id="alimentacao" value="R$ 0,00" readonly title="Valor calculado automaticamente." />
           </div>
-          <div class="field">
-            <label for="materiais">Materiais de estudo (R$ / mês)</label>
-            <input type="number" id="materiais" placeholder="Ex: 80" min="0" />
-          </div>
+        </div>
+
+        <div class="row-ru" id="ru-options" style="display:none; margin-bottom: 15px;">
+          <input type="checkbox" id="usaRu">
+          <label for="usaRu" id="ru-label">Sim, desejo usar o Restaurante Universitário (R.U.) - Custo de
+            R$44/mês.</label>
         </div>
 
         <div class="total-box" aria-live="polite">
-          <div class="total">Total: <span id="totalValue">R$ 0,00</span></div>
-          <div class="status" id="statusText">Seus gastos estão baixos</div>
+          <div class="total">Total Estimado (Aluguel + Transp. + Alim.): <span id="totalValue">R$ 0,00</span> </div>
+          <div class="status" id="statusText">Aguardando dados...</div>
+          <div class="alert-message" id="alertMessage" style="margin-top:10px;font-size:14px;"></div>
         </div>
 
       </div>
+    </section>
+
+    <section aria-labelledby="whatsapp-links">
+      <h2>Links Úteis (RF08) </h2>
+      <p class="lead">Acesse grupos de WhatsApp para encontrar moradia e informações de estudantes.</p>
+      <ul>
+        <li><a href="#" target="_blank">Grupo de Moradia Itabuna</a></li>
+        <li><a href="#" target="_blank">Grupo de Moradia Ilhéus</a></li>
+        <li><a href="#" target="_blank" style="font-weight: bold;">Grupo de Moradia Salobrinho (Destaque) </a></li>
+      </ul>
     </section>
 
     <footer style="margin-top:18px;color:var(--muted);font-size:13px">
