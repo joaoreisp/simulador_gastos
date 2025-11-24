@@ -1,146 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Simulador de Gastos Universitários - Itabuna & Ilhéus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudenIQ - Simulador de Gastos Universitários</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-  <div class="frame" role="main">
-    <header>
-      <div class="brand">StudenIQ</div>
-      <a href="paginaInicial.html" class="back-btn">← Voltar à Tela Inicial</a>
+  <header>
+    <div class="container">
+      <h1>🎓 StudenIQ</h1>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#faculdades">Faculdades</a>
+        <a href="simulacao.html" class="btn">Acessar Simulador</a>
+      </nav>
+    </div>
+  </header>
 
-      <div class="hamburger" aria-hidden="true">☰</div>
-    </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Planeje seu futuro com <span>inteligência financeira</span></h2>
+      <p>Descubra quanto você gastará estudando em Itabuna ou Ilhéus e organize seu orçamento de forma prática e rápida.</p>
+      <a href="simulacao.html" class="btn-primary">Iniciar Simulação</a>
+    </div>
+  </section>
 
-    <section class="hero" aria-label="Destaque">
-      <h1>Estime e planeje seus gastos universitários em Itabuna e Ilhéus</h1>
-    </section>
+  <section id="sobre" class="info">
+    <div class="container">
+      <h3>Sobre o Projeto</h3>
+      <p>
+        O <strong>StudenIQ</strong> foi criado para ajudar estudantes a estimar seus custos com
+        moradia, transporte e alimentação nas principais cidades universitárias da região.
+      </p>
+      <p>Nosso objetivo é tornar o planejamento financeiro estudantil simples, rápido e acessível.</p>
+    </div>
+  </section>
 
-    <section aria-labelledby="perfil-title">
-      <h2 id="perfil-title">Perfil Informativo: Cidades e Faculdades</h2>
-      <p class="lead">Informações de contexto para te ajudar a planejar e comparar as opções de estudo e moradia.</p>
-
-      <div class="grid-2">
-        <div>
-          <h3>Cidades e Bairros</h3>
-          <p>A localização da moradia impacta diretamente nos custos de aluguel e transporte:</p>
-          <ul>
-            <li>Itabuna: Os bairros principais para estudantes incluem Centro, Santo Antônio, São Caetano, Nova Itabuna
-              e Ferradas.</li>
-            <li>Ilhéus: Bairros com boa presença estudantil são Centro, Pontal, Barra, Teotônio Vilela e Nelson Costa.
-            </li>
-            <li>Salobrinho (Ilhéus): É tratado como uma cidade universitária (próximo à UESC). Possui transporte
-              gratuito e R.U. opcional (custo fixo de R$44/mês).</li>
-          </ul>
+  <section id="faculdades" class="cards">
+    <div class="container">
+      <h3>Faculdades e Cidades</h3>
+      <div class="card-grid">
+        <div class="card">
+          <i data-lucide="building-2"></i>
+          <h4>UNEX</h4>
+          <p>Localizada em Itabuna, oferece cursos de graduação com fácil acesso e infraestrutura moderna.</p>
         </div>
-        <div>
-          <h3>Faculdades e Custos</h3>
-          <p>O custo com alimentação e transporte é frequentemente definido pela sua instituição de ensino:</p>
-          <ul>
-            <li>UESC: Possui Restaurante Universitário (R.U.) com baixo custo (R$44/mês). O transporte é pago,
-              dependendo da sua localização.</li>
-            <li>UFSB: A alimentação depende da cidade de residência (padrão R$300/mês para quem não usa R.U.). O
-              transporte é pago.</li>
-            <li>UNEX (Particular): Localizada apenas em Itabuna. Não possui R.U., resultando em uma estimativa de
-              alimentação mais cara (R$350/mês).</li>
-          </ul>
+        <div class="card">
+          <i data-lucide="graduation-cap"></i>
+          <h4>UESC</h4>
+          <p>Entre Ilhéus e Itabuna, com restaurante universitário, transporte próprio e ensino de qualidade.</p>
+        </div>
+        <div class="card">
+          <i data-lucide="book-open"></i>
+          <h4>UFSB</h4>
+          <p>Com campus em Ilhéus, oferece ensino público e incentiva a mobilidade acadêmica.</p>
         </div>
       </div>
-      <a href="#calculator" class="btn btn-primary" style="margin-top:20px;display:inline-block;">Calcular meus gastos
-        agora</a>
-    </section>
+    </div>
+  </section>
 
-    <section aria-labelledby="calc-title">
-      <h2 id="calc-title">Calculadora de Gastos</h2>
-      <div class="calculator" id="calculator">
-        <div class="row">
-          <div class="field">
-            <label for="faculdade">Faculdade</label>
-            <select id="faculdade" aria-label="Faculdade">
-              <option value="">Selecione a faculdade</option>
-              <option value="UNEX">UNEX</option>
-              <option value="UFSB">UFSB</option>
-              <option value="UESC">UESC</option>
-            </select>
-          </div>
+  <footer>
+    <p>© 2025 StudenIQ </p>
+  </footer>
 
-          <div class="field">
-            <label for="cidade">Cidade</label>
-            <select id="cidade" aria-label="Cidade" disabled>
-              <option value="">Selecione a cidade</option>
-              <option value="Itabuna">Itabuna</option>
-              <option value="Ilhéus">Ilhéus</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="bairro">Bairro/Moradia</label>
-            <select id="bairro" aria-label="Bairro" disabled>
-              <option value="">Selecione a Cidade primeiro</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="field">
-            <label for="aluguel">Aluguel/Moradia (R$ / mês)</label>
-            <input type="text" id="aluguel" placeholder="Ex: 500 (obrigatório)" min="0" disabled />
-          </div>
-          <div class="field">
-            <label for="transporte">Transporte (R$ / mês)</label>
-            <input type="text" id="transporte" value="R$ 0,00" readonly title="Valor calculado automaticamente." />
-          </div>
-          <div class="field">
-            <label for="alimentacao">Alimentação (R$ / mês)</label>
-            <input type="text" id="alimentacao" value="R$ 0,00" readonly title="Valor calculado automaticamente." />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="field">
-            <label for="materiais">Materiais de estudo (R$ / mês)</label>
-            <input type="text" id="materiais" placeholder="Ex: 80 (Outros Custos)" min="0" disabled />
-          </div>
-        </div>
-
-        <div class="row-ru" id="ru-options" style="display:none; margin-bottom: 15px;">
-          <input type="checkbox" id="usaRu">
-          <label for="usaRu" id="ru-label">Sim, desejo usar o Restaurante Universitário (R.U.) - Custo de
-            R$44/mês.</label>
-        </div>
-
-        <div class="total-box" aria-live="polite">
-          <div class="total">Total Estimado (Aluguel + Transp. + Alim. + Outros): <span id="totalValue">R$ 0,00</span>
-          </div>
-          <div class="status" id="statusText">Aguardando dados...</div>
-          <div class="alert-message" id="alertMessage" style="margin-top:10px;font-size:14px;"></div>
-        </div>
-
-      </div>
-    </section>
-
-    <section aria-labelledby="whatsapp-links">
-      <h2>Links Úteis</h2>
-      <p class="lead">Acesse grupos de WhatsApp para encontrar moradia e informações de estudantes.</p>
-      <ul>
-        <li><a href="#" target="_blank">Grupo de Moradia Itabuna</a></li>
-        <li><a href="#" target="_blank">Grupo de Moradia Ilhéus</a></li>
-        <li><a href="#" target="_blank" style="font-weight: bold;">Grupo de Moradia Salobrinho (Destaque)</a></li>
-      </ul>
-    </section>
-
-    <footer style="margin-top:18px;color:var(--muted);font-size:13px">
-      <div>Links úteis: sites oficiais das faculdades | Contato: contato@bloguniversitario.local</div>
-      <div style="margin-top:8px">© 2025 Blog Universitário</div>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
-
 </html>
