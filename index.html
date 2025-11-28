@@ -1,24 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudenIQ - Simulador de Gastos Universitários</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog Universitário — Mockup</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <h1>🎓 StudenIQ</h1>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#faculdades">Faculdades</a>
-        <a href="simulacao.html" class="btn">Acessar Simulador</a>
-      </nav>
-    </div>
-  </header>
+  <div class="frame" role="main">
+    <header>
+      <div class="brand">Blog Universitário</div>
+      <div class="hamburger" aria-hidden="true">☰</div>
+    </header>
 
     <section class="hero" aria-label="Destaque">
       <h1>Informação universitária e regional em um só lugar</h1>
@@ -28,45 +23,48 @@
       <h2 id="fac-title">Faculdades</h2>
       <div class="faculties">
         <article class="card">
-          <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s="
-            alt="UNEX">
+          <img src="/assets/unex.png" alt="UNEX">
           <div class="body">
             <div class="title">UNEX</div>
-            <a href="#unex" class="btn">Saiba mais</a>
+            <a href="https://unex.edu.br/" target="_blank" class="btn">Saiba mais</a>
           </div>
         </article>
         <article class="card">
-          <img
-            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s="
-            alt="UFSB">
+          <img src="/assets/ufsb.png" alt="UFSB">
           <div class="body">
             <div class="title">UFSB</div>
-            <a href="#ufsb" class="btn">Saiba mais</a>
+            <a href="https://ufsb.edu.br/" target="_blank" class="btn">Saiba mais</a>
           </div>
         </article>
         <article class="card">
-          <img
-            src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s="
-            alt="UESC">
+          <img src="/assets/uesc.png" alt="UESC">
           <div class="body">
             <div class="title">UESC</div>
-            <a href="#uesc" class="btn">Saiba mais</a>
+            <a href="https://www.uesc.br/" class="btn">Saiba mais</a>
           </div>
         </article>
       </div>
     </section>
 
-  <section id="sobre" class="info">
-    <div class="container">
-      <h3>Sobre o Projeto</h3>
-      <p>
-        O <strong>StudenIQ</strong> foi criado para ajudar estudantes a estimar seus custos com
-        moradia, transporte e alimentação nas principais cidades universitárias da região.
-      </p>
-      <p>Nosso objetivo é tornar o planejamento financeiro estudantil simples, rápido e acessível.</p>
-    </div>
-  </section>
+    <section class="grid-2" aria-label="Informativos">
+      <div>
+        <h2>Região</h2>
+        <p class="lead">Informações sobre a região: cultura, pontos turísticos e estilo de vida local.</p>
+      </div>
+      <div>
+        <h2>Mercado</h2>
+        <p class="lead">Panorama do mercado de trabalho, estágios e oportunidades para estudantes.</p>
+      </div>
+
+      <div>
+        <h2>Entretenimento</h2>
+        <p class="lead">Dicas de lazer: bares, cinemas, eventos e locais de encontro estudantil.</p>
+      </div>
+      <div>
+        <h2>Sobre as Faculdades</h2>
+        <p class="lead">Resumo das instituições: cursos, acesso e contatos úteis.</p>
+      </div>
+    </section>
 
     <section aria-labelledby="calc-title">
       <h2 id="calc-title">Calculadora de gastos</h2>
@@ -81,15 +79,20 @@
               <option>Brumado</option>
             </select>
           </div>
+
           <div class="field">
             <label for="bairro">Bairro</label>
             <select id="bairro" aria-label="Bairro">
               <option value="">Selecione o bairro</option>
-              <option>Centro</option>
-              <option>Residencial</option>
-              <option>Universitário</option>
+              <option value="centro">Centro (R$ 600)</option>
+              <option value="santoAntonio">Santo Antônio (R$ 450)</option>
+              <option value="california">Califórnia (R$ 400)</option>
+              <option value="outro">Outro (R$ 0)</option>
             </select>
+            <input type="number" name="outro" id="outro" placeholder="Se outro, especifique (R$)" min="0"
+              style="margin-top:8px; display:none;" />
           </div>
+
           <div class="field">
             <label for="faculdade">Faculdade</label>
             <select id="faculdade" aria-label="Faculdade">
@@ -102,34 +105,51 @@
         </div>
 
         <div class="row">
-          <div class="field">
-            <label for="transporte">Transporte (R$ / mês)</label>
-            <input type="number" id="transporte" placeholder="Ex: 150" min="0" />
+
+          <!-- 🔧 CAMPO DE TRANSPORTE AGORA TEM ID NO CONTAINER -->
+          <div class="field" id="transporteBox" style="display: none;">
+            <label for="transporte">Transporte (R$ / ida)</label>
+            <input type="number" id="transporte" placeholder="Ex: 10" min="0" />
           </div>
+
           <div class="field">
             <label for="alimentacao">Alimentação (R$ / mês)</label>
             <input type="number" id="alimentacao" placeholder="Ex: 600" min="0" />
           </div>
-          <div class="field">
-            <label for="materiais">Materiais de estudo (R$ / mês)</label>
-            <input type="number" id="materiais" placeholder="Ex: 80" min="0" />
+
+          <div class="field" id="mensalidadeBox" style="display:none;">
+            <label>Mensalidade da Faculdade</label>
+            <div>
+              <input type="radio" name="formaPagamento" id="mensal" checked>
+              <label for="mensal">Mensal</label>
+              <input type="radio" name="formaPagamento" id="avista">
+              <label for="avista">À vista (semestre)</label>
+            </div>
+            <input type="number" id="valorMensalidade" placeholder="Ex: 800" min="0" />
           </div>
-        </div>
 
-        <div class="total-box" aria-live="polite">
-          <div class="total">Total: <span id="totalValue">R$ 0,00</span></div>
-          <div class="status" id="statusText">Seus gastos estão baixos</div>
-        </div>
+          <div class="field" id="quantidadeIdasBox" style="display:none;">
+            <label for="qtdIdas">Quantas vezes por mês você vai à faculdade?</label>
+            <input type="number" id="qtdIdas" placeholder="Ex: 20" min="0" />
+          </div>
 
+          <div class="total-box" aria-live="polite">
+            <div class="total">Total: <span id="totalValue">R$ 0,00</span></div>
+            <div class="status" id="statusText">Seus gastos estão baixos</div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-  <footer>
-    <p>© 2025 StudenIQ </p>
-  </footer>
 
-  <script>
-    lucide.createIcons();
-  </script>
+    <footer style="margin-top:18px;color:var(--muted);font-size:13px">
+      <div>Links úteis: sites oficiais das faculdades | Contato: contato@bloguniversitario.local</div>
+      <div style="margin-top:8px">© 2025 Blog Universitário</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
